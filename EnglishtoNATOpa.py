@@ -12,7 +12,7 @@ class MyWidget(QWidget):
 
         self.text = QLabel("(NATO phonetic alphabet result will appear here)")
         self.textbox = QLineEdit("Enter English Text to Convert Here")
-        self.button = QPushButton("Convert")
+        self.button = QPushButton("Convert (Text will be saved to clipboard)")
         self.button2 = QPushButton("Speak")
         self.text.setAlignment(Qt.AlignCenter)
 
@@ -100,6 +100,9 @@ class MyWidget(QWidget):
                 output = output + char
 
         self.text.setText(output)
+        clipboard = QApplication.clipboard()
+        clipboard.clear(mode=clipboard.Clipboard)
+        clipboard.setText(output, mode=clipboard.Clipboard)
         print("Output: " + output)
 
     def magic2(self):
