@@ -29,7 +29,7 @@ class MyWidget(QWidget):
 
     @Slot()
     def magic(self):
-        print("Output: " + str(self.textbox.text()))
+        print("Input: " + str(self.textbox.text()))
         output = ""
         self.text.setText("Converting...")
 
